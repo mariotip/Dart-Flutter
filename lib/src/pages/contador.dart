@@ -49,6 +49,7 @@ class _ContadorState extends State<Contador> {
         ),
         SizedBox(
           child: FloatingActionButton(
+            heroTag: 'hero1',
             onPressed: _reset,
             child: Icon(Icons.refresh),
           ),
@@ -57,6 +58,7 @@ class _ContadorState extends State<Contador> {
         Expanded(child: SizedBox()),
         SizedBox(
           child: FloatingActionButton(
+            heroTag: 'hero2',
             onPressed: _rest,
             child: Icon(Icons.remove),
           ),
@@ -67,6 +69,7 @@ class _ContadorState extends State<Contador> {
         ),
         SizedBox(
           child: FloatingActionButton(
+            heroTag: 'hero3',
             onPressed: _add,
             child: Icon(Icons.add),
           ),

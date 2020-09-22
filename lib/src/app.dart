@@ -1,6 +1,6 @@
-import 'package:contador/src/pages/contador.dart';
 import 'package:flutter/material.dart';
-// import 'package:contador/src/pages/home_page.dart';
+import 'package:contador/src/routes/routes.dart';
+import 'package:contador/src/pages/home_page_copy.dart';
 
 class MyApp extends StatelessWidget {
   //clase para llamar extendiendo de class name extends StatelessWidget
@@ -8,6 +8,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //a build mandamos el context
     // return MaterialApp(home: Center(child: HomePage()));
-    return MaterialApp(home: Center(child: Contador()));
+    return MaterialApp(
+      title: 'componenteas',
+      debugShowCheckedModeBanner: false,
+//creamos nuetras rutas par la navegacion ROUTES
+      initialRoute: '/',
+      routes: getAppRoutes(),
+      onGenerateRoute: (RouteSettings settings) {
+        print('ruta llamada ${settings.name}');
+        return MaterialPageRoute(
+            builder: (BuildContext context) => HomePageCopy());
+      },
+    );
   }
 }
