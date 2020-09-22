@@ -12,11 +12,12 @@ class HomePageCopy extends StatelessWidget {
       appBar: AppBar(
           title: Text('Componentes'),
           centerTitle: true,
-          backgroundColor: Colors.blue[500]),
+          backgroundColor: Colors.purple[700]),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text('Page Default'),
             Text(
               'Numero de puchadas XD:',
               style: estiloTexto,

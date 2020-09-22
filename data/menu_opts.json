@@ -24,7 +24,12 @@
         {
             "ruta" : "mio",
             "icon" : "mio",
-            "texto": "Mis Imagenes"
+            "texto": "Nada"
+        },
+        {
+            "ruta" : "animate",
+            "icon" : "dona",
+            "texto": "Animacion"
         }
     ]
 }
