@@ -31,5 +31,11 @@
             "icon" : "dona",
             "texto": "Animacion"
         }
+        ,
+        {
+            "ruta" : "input",
+            "icon" : "input",
+            "texto": "Inputs"
+        }
     ]
 }

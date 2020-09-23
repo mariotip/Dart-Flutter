@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class AnimatePage extends StatefulWidget {
   @override
-  _nameState createState() => _nameState();
+  _AnimatePage createState() => _AnimatePage();
 }
 
-class _nameState extends State<AnimatePage> {
+class _AnimatePage extends State<AnimatePage> {
   double _width = 50.0;
   double _height = 50.0;
   Color _color = Colors.blue[900];
