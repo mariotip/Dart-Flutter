@@ -7,7 +7,8 @@ final _icons = <String, IconData>{
   'count': Icons.timer,
   'mio': Icons.audiotrack,
   'dona': Icons.donut_large,
-  'input': Icons.input
+  'input': Icons.input,
+  'slider':Icons.slideshow_outlined
 };
 
 Icon getIcon(String nombreIcon) {

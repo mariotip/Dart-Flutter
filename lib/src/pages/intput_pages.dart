@@ -12,6 +12,9 @@ class _InputPageState extends State<InputPage> {
   String _email = '';
   String _pass = '';
   String _date = '';
+  List _poderes = ['volar', 'rayos', 'le huele la boca', 'superfuerza'];
+  String _powerSelected = 'volar';
+
   TextEditingController _inputFielDateController = new TextEditingController();
 
   @override
@@ -27,9 +30,9 @@ class _InputPageState extends State<InputPage> {
           _createEmail(),
           _createPass(),
           _createDate(),
-          // _createDropdown(),
-          Divider(),
+          _createDropdown(),
           _createPerson(),
+          Divider(),
         ],
       ),
     );
@@ -100,7 +103,7 @@ class _InputPageState extends State<InputPage> {
       );
 
   _createDate() => TextField(
-        enableInteractiveSelection: false,
+        // enableInteractiveSelection: false,
         controller: _inputFielDateController,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.all(10),
@@ -133,11 +136,29 @@ class _InputPageState extends State<InputPage> {
     }
   }
 
-// List<DropdownMenuItem> getOpcDropDown
-//   _createDropdown() => DropdownButton(
-//         items: [],
-//         onChanged: (opc) {
-//           print(opc);
-//         },
-//       );
+  List<DropdownMenuItem<String>> getOpcDrop() {
+    List<DropdownMenuItem<String>> lista = new List();
+
+    _poderes.forEach((poder) {
+      lista.add(DropdownMenuItem(value: poder, child: Text(poder)));
+    });
+    return lista;
+  }
+
+  _createDropdown() => 
+  Row(
+    children: [
+      Icon(Icons.select_all_outlined),
+      SizedBox(width: 30),
+      DropdownButton(
+        value: _powerSelected,
+            items: getOpcDrop(),
+            onChanged: (opc) {
+              setState(() {
+                _powerSelected=opc;
+              });
+            }
+          ),
+    ],
+  );
 }

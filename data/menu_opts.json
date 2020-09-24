@@ -30,12 +30,16 @@
             "ruta" : "animate",
             "icon" : "dona",
             "texto": "Animacion"
-        }
-        ,
+        },
         {
             "ruta" : "input",
             "icon" : "input",
             "texto": "Inputs"
+        },
+        {
+            "ruta" : "slide",
+            "icon" : "slider",
+            "texto": "Slider - Image"
         }
     ]
 }
