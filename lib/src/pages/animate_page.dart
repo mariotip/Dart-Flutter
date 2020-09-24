@@ -20,7 +20,9 @@ class _AnimatePage extends State<AnimatePage> {
           // actions: [],
           ),
       body: Center(
-        child: Container(
+        child: AnimatedContainer(
+          duration: Duration(milliseconds: 500), //tiempo de duracion
+          curve: Curves.fastOutSlowIn, //tipo de animacion
           width: _width,
           height: _height,
           decoration: BoxDecoration(

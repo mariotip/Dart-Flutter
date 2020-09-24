@@ -8,6 +8,7 @@ class ListaPage extends StatefulWidget {
 }
 
 class _ListaPageState extends State<ListaPage> {
+  //dudas de por que se inicicalizan las variables  como  new
   ScrollController _scrollController = new ScrollController();
   List<int> _listNum = new List();
   int _lastItem = 0;
@@ -15,6 +16,7 @@ class _ListaPageState extends State<ListaPage> {
 
   @override
   void initState() {
+    //antes de renderizar vamos a llenar la lista de numeros
     super.initState();
 
     _add10();
@@ -30,6 +32,7 @@ class _ListaPageState extends State<ListaPage> {
   @override
   void dispose() {
     super.dispose();
+    //cancelamos este controller por que se ejecuataria varias veces
     _scrollController.dispose();
   }
 
@@ -43,20 +46,27 @@ class _ListaPageState extends State<ListaPage> {
   }
 
   _createList() {
-    return ListView.builder(
-        controller: _scrollController,
-        itemCount: _listNum.length,
-        itemBuilder: (BuildContext context, int index) {
-          final image = _listNum[index];
-          return Container(
-            padding: EdgeInsets.all(5.0),
-            child: FadeInImage(
-              image: NetworkImage('https://picsum.photos/500/300?image=$image'),
-              placeholder: AssetImage('assets/load.gif'),
-              fit: BoxFit.cover,
-            ),
-          );
-        });
+    return RefreshIndicator(
+      //se recargaria tode esta seccion con el refresh indicador
+      onRefresh: getPage1,
+      child: ListView.builder(
+          controller: _scrollController,
+          itemCount: _listNum.length,
+          itemBuilder: (BuildContext context,
+                  int index) //renderiza nuestra lista se crea el contexto
+              {
+            final image = _listNum[index];
+            return Container(
+              padding: EdgeInsets.all(5.0),
+              child: FadeInImage(
+                image:
+                    NetworkImage('https://picsum.photos/500/300?image=$image'),
+                placeholder: AssetImage('assets/load.gif'),
+                fit: BoxFit.cover,
+              ),
+            );
+          }),
+    );
   }
 
   void _add10() {
@@ -99,5 +109,18 @@ class _ListaPageState extends State<ListaPage> {
     } else {
       return Container();
     }
+  }
+
+  Future<Null> getPage1() async {
+    final duration = new Duration(seconds: 2);
+
+    new Timer(duration, () {
+      //
+      _listNum.clear(); //limpiar  purgar
+      _lastItem++;
+      _add10();
+    });
+
+    return Future.delayed(duration);
   }
 }
