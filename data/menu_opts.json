@@ -40,6 +40,11 @@
             "ruta" : "slide",
             "icon" : "slider",
             "texto": "Slider - Image"
+        },
+        {
+            "ruta" : "list",
+            "icon" : "list",
+            "texto": "List - Scroll"
         }
     ]
 }

@@ -63,8 +63,7 @@ class _SliderPageState extends State<SliderPage> {
         });
       });
 
-  _createSwitch()=>
-  SwitchListTile(
+  _createSwitch() => SwitchListTile(
       value: _valueCheck,
       title: Text('Slider'),
       onChanged: (valor) {

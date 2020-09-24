@@ -1,5 +1,6 @@
 import 'package:contador/src/pages/animate_page.dart';
 import 'package:contador/src/pages/intput_pages.dart';
+import 'package:contador/src/pages/list_page.dart';
 import 'package:contador/src/pages/slider_page.dart';
 import 'package:flutter/material.dart';
 import 'package:contador/src/pages/home_page.dart';
@@ -17,6 +18,7 @@ Map<String, WidgetBuilder> getAppRoutes() {
     'counter': (BuildContext context) => Contador(),
     'animate': (BuildContext contex) => AnimatePage(),
     'input': (BuildContext contex) => InputPage(),
-    'slide':  (BuildContext contex) => SliderPage()
+    'slide': (BuildContext contex) => SliderPage(),
+    'list': (BuildContext contex) => ListaPage()
   };
 }
